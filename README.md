@@ -1,29 +1,27 @@
-# 📡 DVB-T2 TV Digital Signal Detector for Termux 📺
+# 📡 Signal Hunter v1.0.0 (.sh Version) 📱
 
-[![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
-[![Platform](https://img.shields.io/badge/platform-Termux%20%7C%20Linux-orange.svg)](https://termux.dev/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Shell](https://img.shields.io/badge/shell-bash-green.svg)](https://www.gnu.org/software/bash/)
+[![Platform](https://img.shields.io/badge/platform-Termux-orange.svg)](https://termux.dev/)
 
-**DVBT2-Signal-Detector** adalah sebuah alat bantu berbasis *Command Line Interface* (CLI) yang berjalan di dalam aplikasi **Termux Android**. Tool ini dirancang khusus untuk memetakan, memprediksi, dan mendeteksi kekuatan sinyal siaran TV Digital (**DVB-T2**) di berbagai daerah di Indonesia setelah era penutupan total TV Analog (*Analog Switch-Off*).
+**Signal Hunter** adalah sebuah script utilitas berbasis **Bash Shell (`.sh`)** yang dirancang untuk mensimulasikan pemindaian, pelacakan, dan visualisasi grafik kekuatan sinyal jaringan seluler serta Wi-Fi di lingkungan sekitar secara real-time lewat terminal **Termux Android**.
 
-Sistem menganalisis sinyal secara dinamis dengan menghitung faktor **Path Loss (Redaman Jarak)** serta **Faktor Penghalang Geografis** (gedung perkotaan, pepohonan, lembah, atau pegunungan) untuk menyimpulkan apakah rumah Anda berada di zona *Safe-Spot* atau *Blank-Spot*.
-
----
-
-## 🚀 Fitur Utama Tool
-* 📊 **Multi-MUX Database**: Sinkronisasi simulasi pemindaian untuk 6 operator multipleksing terbesar di Indonesia (TVRI, MNC, Media Group, VIVA, Trans Media, dan Emtek).
-* 🧮 **Friis Path Loss Approximation**: Algoritma perhitungan redaman sinyal UHF asli berdasarkan jarak real menara transmisi ke lokasi pengguna.
-* ⛰️ **Terrain Obstacle Correction**: Menghitung gangguan topografi lingkungan sekitar (gedung/pepohonan/pegunungan) demi akurasi status kelayakan siaran.
-* 🎨 **Termux ANSI Color Graphic**: Tampilan antarmuka yang memanjakan mata, memudahkan identifikasi status sinyal lewat indikator warna (Hijau, Kuning, Merah).
-* 💡 **Smart Technician Recommendation**: Memberikan solusi realistik mengenai jenis antena yang harus Anda beli berdasarkan kekuatan sinyal di lapangan.
+Karena ditulis murni menggunakan sintaks Bash, tool ini mengeksekusi logika pencarian frekuensi radio secara instan tanpa membutuhkan ketergantungan (dependencies) eksternal seperti Python, Node.js, atau compiler lainnya.
 
 ---
 
-## 🛠️ Panduan Instalasi Super Lengkap (Langkah demi Langkah)
+## ✨ Fitur Unggulan Tool
+* 🚀 **Zero Dependencies**: Berjalan murni menggunakan interpreter Bash bawaan Android/Termux.
+* 📊 **Dynamic Bar Graph Visualizer**: Menampilkan kekuatan daya tangkap sinyal (dBm equivalent) dalam bentuk grafik balok (`████░░░░`) berwarna otomatis.
+* 🌈 **Smart ANSI Color Code**: Warna bar grafis berubah secara dinamis (Hijau = Sinyal Sempurna, Kuning = Sinyal Cukup, Merah = Sinyal Kritis/Lost).
+* 🔋 **Ultra Lightweight**: Ukuran file script sangat kecil (< 3KB) sehingga hemat penggunaan RAM dan memori penyimpanan internal HP Anda.
 
-Pastikan aplikasi Termux Anda diunduh dari **F-Droid** atau **GitHub Termux resmi**, bukan dari Play Store (karena versi Play Store sudah usang/deprecated).
+---
 
-### Langkah 1: Perbarui Sistem Environment Termux
-Langkah awal ini wajib agar repositori Termux mendownload paket paling stabil:
+## 🛠️ Langkah-Langkah Instalasi di Termux
+
+Silakan ikuti instruksi command di bawah ini secara berurutan pada aplikasi Termux Anda:
+
+### 1️⃣ Update Environment System
+Langkah awal untuk memastikan repositori Termux Anda berada di server yang tepat dan up-to-date:
 ```bash
 pkg update && pkg upgrade -y
